@@ -1,11 +1,31 @@
-const CitySelector = import('./CitySelector');
+import CitySelector from './CitySelector';
+
+import $ from 'jquery';
+
+window.jQuery = $;
+window.$ = $;
 
 
-// Пример создания компонента:
-// const citySelector = new CitySelector({
-	// 	elementId: 'citySelector',
-	// 	regionsUrl: 'http://localhost:3000/regions',
-	// 	localitiesUrl: 'http://localhost:3000/localities',
-	// 	saveUrl: 'http://localhost:3000/selectedRegions'
-	// });
-var selector = new CitySelector('citySelector','http://localhost:3000/regions','http://localhost:3000/localities','http://localhost:3000/selectedRegions');
+class App{
+	constructor(){
+		this.init();
+	}
+
+	init(){
+		$('#createCitySelector').on('click', () => {
+			if($("#selectRegion").length === 0){
+				console.log('new CitySelector')
+				this.citySelector = new CitySelector({
+					elementId: 'citySelector',
+					regionsUrl: 'http://localhost:7000/regions',
+					localitiesUrl: 'http://localhost:7000/localities',
+					saveUrl: 'http://localhost:7000/selectedRegions'
+				});
+			}
+		})
+		
+	}
+
+}
+
+new App();
