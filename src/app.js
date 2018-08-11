@@ -11,10 +11,9 @@ class App{
 		this.init();
 	}
 
-	init(){
+	init() {
 		$('#createCitySelector').on('click', () => {
-			if($("#selectRegion").length === 0){
-				console.log('new CitySelector')
+			if($('#selectRegion').length === 0) {
 				this.citySelector = new CitySelector({
 					elementId: 'citySelector',
 					regionsUrl: 'http://localhost:7000/regions',
@@ -23,9 +22,7 @@ class App{
 				});
 			}
 		})
-		
 	}
-
 }
 
 new App();
