@@ -86,7 +86,7 @@ export default class CitySelector{
 		})
 	}
 
-	destroy(data){
+	destroy(data) {
 		$('#destroyCitySelector').on('click',() => {
 			$('#localityText').text('');
 			$('#regionText').text('');
@@ -113,23 +113,3 @@ export default class CitySelector{
 	
 	
 }
-
-/* export default class SelectorFunctions {
-	constructor(data) {
-		this.data = data;
-		
-		
-		$("#selectRegion").off('click').on("click", () => {
-			$("#" + data.elementId).html('');
-			$.ajax({
-				url: data.regionsUrl,
-				context: $("#" + data.elementId),
-				success: (data) => {
-					this.showRegions(data);
-				}
-			});
-		});
-		
-	}
-};
-*/

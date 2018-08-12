@@ -1,5 +1,38 @@
 #info {
-    float: right;
+	float: right;
 }
 
 // Your code...
+
+#citySelector {
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.regions, .cities {
+	padding-left: 0;
+	list-style: none;
+	margin-right: 100px;
+	width: auto;
+}
+.regions .item, .cities .item {
+	cursor: pointer;
+	font-size: 16px;
+	padding: 10px 20px;
+	font-weight: bold;
+	transition: background 0.2s;
+}
+
+.item:hover {
+	background: rgba(128,128,128,.2);
+}
+
+.item.selected {
+	background: rgba(128,128,128,.2);
+}
+
+#save_city {
+	cursor: pointer;
+	margin-top: 20px;
+}
